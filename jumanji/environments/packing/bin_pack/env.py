@@ -14,7 +14,6 @@
 
 import functools
 import itertools
-from functools import cached_property
 from typing import Any, Dict, Optional, Sequence, Tuple, cast
 
 import chex
@@ -189,7 +188,6 @@ class BinPack(Environment[State, specs.MultiDiscreteArray, Observation]):
             ]
         )
 
-    @cached_property
     def observation_spec(self) -> specs.Spec[Observation]:
         """Specifications of the observation of the `BinPack` environment.
 
@@ -317,7 +315,6 @@ class BinPack(Environment[State, specs.MultiDiscreteArray, Observation]):
             for axis in ["x_len", "y_len", "z_len"]
         }
 
-    @cached_property
     def action_spec(self) -> specs.MultiDiscreteArray:
         """Specifications of the action expected by the `BinPack` environment.
 
